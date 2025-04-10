@@ -1,30 +1,3 @@
---[[
-	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
-]]
---[[
-    ScriptHub Analyzer v2 - Final Optimized Edition with Organized JSON Output
-
-    Made by cbyerseall (Terry Davis) on dc
-    
-    Discord: https://discord.gg/KQMzeSpNbY
-    ----------------------------------------------------------------------------
-    Features:
-      * Passive hooking for loadstring, HttpGet, RequestAsync, and require.
-      * The original script remains unaffected.
-      * Categorized logging: "SYSTEM", "LOADSTRING", "LOADSTRING_FULL", "LOADSTRING_LINK",
-        "AUTODECOMPILE", "DEBUG", "HTTP", "REQUEST", "MODULE".
-      * All log messages are stored in a "logs" array.
-      * All detected URLs are stored in a separate "links" array.
-      * Every unique loadstring call (full code) is stored in a "loadstringCalls" array.
-      * The final JSON is saved (pretty printed) to "ScriptHubAnalyzer_Log.json" with keys "logs", "links", and "loadstringCalls".
-      * Auto-detects URLs in loadstring code.
-      * If a loadstring returns obfuscated code (e.g. starting with "return(function(" and containing "local N={"),
-        it instantly triggers auto-decompilation and saves the output.
-      * Auto-decompilation uses Dex’s decompile logic (from :contentReference[oaicite:0]{index=0}&#8203;:contentReference[oaicite:1]{index=1}) without opening Dex manually.
-      * All heavy operations run asynchronously so the game does not freeze.
-      * Call-stack logging is limited to 5 levels and only executed for new loadstring code.
-]]
-
 local HttpService = game:GetService("HttpService")
 local LOG_FILENAME = "ScriptHubAnalyzer_Log.json"  -- JSON log file
 
